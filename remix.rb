@@ -27,6 +27,10 @@ class Remix
         transform_data(chunk) 
     end
 
+    def time
+        @data.split(' ').last
+    end
+
     private
 
     def has_measurement?

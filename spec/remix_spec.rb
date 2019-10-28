@@ -45,4 +45,12 @@ describe 'Remix' do
             end
         end
     end
+
+    describe ".timestamp" do
+        context 'with timestamp' do
+            it 'finds the timestamp' do
+                expect(instance.time).to eq("1465839830100400200")
+            end
+        end
+    end
 end
