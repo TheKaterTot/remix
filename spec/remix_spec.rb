@@ -63,9 +63,16 @@ describe 'Remix' do
     end
 
     describe ".line_protocol" do
-        context 'with remix object' do
+        context 'with original remix object' do
             it 'turns remix into line protocol' do
                 expect(instance.line_protocol).to eq(data)
+            end
+        end
+        context 'with updated time' do
+            it 'turns remix into line protocol' do
+                t = "1573508173170660019"
+                instance.update_time(t)
+                expect(instance.line_protocol).to eq("weather,location=us-midwest temperature=82 1573508173170660019")
             end
         end
     end
