@@ -31,6 +31,13 @@ class Remix
         @data.split(' ').last
     end
 
+    def update_time(time)
+        info = @data.split(' ')
+        info.pop
+        info.push(time.to_s)
+        @data = info.join(' ')
+    end
+
     private
 
     def has_measurement?

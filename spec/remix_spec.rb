@@ -51,4 +51,14 @@ describe 'Remix' do
             end
         end
     end
+
+    describe ".update_time" do
+        context 'with new time' do
+            it 'replaces the time' do
+                t = "1573508173170660019"
+                instance.update_time(t)
+                expect(instance.time).to eq(t)
+            end
+        end
+    end
 end
