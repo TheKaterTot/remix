@@ -61,4 +61,12 @@ describe 'Remix' do
             end
         end
     end
+
+    describe ".line_protocol" do
+        context 'with remix object' do
+            it 'turns remix into line protocol' do
+                expect(instance.line_protocol).to eq(data)
+            end
+        end
+    end
 end

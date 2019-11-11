@@ -38,6 +38,10 @@ class Remix
         @data = info.join(' ')
     end
 
+    def line_protocol
+        @data
+    end
+
     private
 
     def has_measurement?
@@ -56,4 +60,3 @@ class Remix
         end
     end
 end
-  
