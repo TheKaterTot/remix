@@ -8,14 +8,14 @@ class Writer
         @token = token
     end
 
-    def write
+    def write(data)
         conn = Faraday.new(
             url: @url, 
             params: {org: @org, bucket: @bucket}, 
             headers: {"Authorization" => "Token #{@token}"}
         )
         res = conn.post('api/v2/write') do |req|
-            req.body = 'test,host=host1 used_percent=23.43234543 1573682530669955015'
+            req.body = data
         end
     end
 end
