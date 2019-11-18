@@ -18,7 +18,8 @@ class Writer
             headers: {"Authorization" => "Token #{@token}"}
         )
         res = conn.post('api/v2/write') do |req|
-            req.body = stringData.strip
+            req.body = stringData.chomp
         end
+
     end
 end
