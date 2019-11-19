@@ -23,6 +23,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.0)
+    slop (4.7.0)
 
 PLATFORMS
   ruby
@@ -31,6 +32,7 @@ DEPENDENCIES
   faraday
   pry
   rspec
+  slop
 
 BUNDLED WITH
    1.17.3

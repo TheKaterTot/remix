@@ -1,8 +1,8 @@
 require 'faraday'
 
 class Writer
-    def initialize(org, bucket, token)
-        @url = "https://us-west-2-1.aws.cloud2.influxdata.com"
+    def initialize(host, org, bucket, token)
+        @url = host
         @org = org
         @bucket = bucket
         @token = token
