@@ -9,6 +9,11 @@ opts = Slop.parse do |o|
     o.string '-o', '--org', 'an organization'
     o.string '-b', '--bucket', 'a bucket'
     o.string '-t', '--token', 'a token', default: ENV["INFLUX_TOKEN"]
+
+    o.on '--help' do
+        puts o
+        exit
+      end
 end
 
 load = Loader.new(ARGV.last)
