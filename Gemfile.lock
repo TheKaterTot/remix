@@ -2,6 +2,8 @@ PATH
   remote: .
   specs:
     influx_remix (1.0.2)
+      faraday (~> 0.17.0)
+      slop (~> 4.7.0)
 
 GEM
   remote: https://rubygems.org/
