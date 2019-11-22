@@ -1,36 +1,39 @@
-# Remix
+# InfluxRemix
 
-Welcome to Remix, a command line tool to import historical data into InfluxDB 2.0 with current timestamps. 
+Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/influx_remix`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-## What you need
+TODO: Delete this and the text above, and describe your gem
 
-You need a text file in line protocol format. 
+## Installation
 
-Remix is written in Ruby, so you need Ruby in order to run it. #sorrynotsorry
+Add this line to your application's Gemfile:
 
-## How does it work?
+```ruby
+gem 'influx_remix'
+```
 
-The first data point in your file will become "now". All other points will be reassigned in relation to now. Two points that are five seconds apart will remain five seconds apart, just at a fresher point in time. Only the timestamp changes--nothing else about your data will be changed.
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install influx_remix
 
 ## Usage
 
-Clone this repo.
+TODO: Write usage instructions here
 
-Don't forget to bundle!
+## Development
 
-If you're adding this to an open source instance of InfluxDB 2.0, make sure Influx is running before you run the following command.
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-From the project directory:
-    $ruby ./main.rb -o "MyOrg" -b "lilbucket" -t "secrettoken" mylineprotocol.txt
+To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
-The default host is http://localhost:9999
-If you're using InfluxDB Cloud 2.0, simply add the host flag with the url to your instance.
+## Contributing
 
-The default token is $INFLUX_TOKEN, but you can specify the token with the token flag.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/influx_remix.
 
-# Flags
+## License
 
---host, -h: host url of your InfluxDB 2.0 instance
---org, -o: name of your InfluxDB organization
---bucket, -b: name of the InfluxDB bucket to write to
---token, -t: your InfluxDB 2.0 token
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).

@@ -1,6 +1,4 @@
-require_relative './loader'
-require_relative './remix'
-require_relative './writer'
+require 'influx_remix'
 require 'slop'
 
 #!/usr/bin/env ruby
@@ -16,8 +14,8 @@ opts = Slop.parse do |o|
       end
 end
 
-load = Loader.new(ARGV.last)
+load = InfluxRemix::Loader.new(ARGV.last)
 load.update_time
 
-writer = Writer.new(opts[:host], opts[:org], opts[:bucket], opts[:token])
+writer = InfluxRemix::Writer.new(opts[:host], opts[:org], opts[:bucket], opts[:token])
 writer.write(load.blob)
