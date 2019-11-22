@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    influx_remix (1.0.0)
+    influx_remix (1.0.1)
 
 GEM
   remote: https://rubygems.org/
