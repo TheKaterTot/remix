@@ -20,9 +20,39 @@ Or install it yourself as:
 
     $ gem install influx_remix
 
+# What you Need
+You need a text file in line protocol format. 
+
+Remix is a Ruby gem, so you need Ruby in order to run it. #sorrynotsorry
+
+## How does it work?
+
+The first data point in your file will become "now". All other points will be reassigned in relation to now. Two points that are five seconds apart will remain five seconds apart, just at a fresher point in time. Only the timestamp changes--nothing else about your data will be changed.
+
 ## Usage
 
-TODO: Write usage instructions here
+    $ influx_remix -org "myOrg" -bucket "lilbucket" mylineprotocol.txt
+
+    $ influx_remix -o "MyOrg" -b "lilbucket" -t "secrettoken" mylineprotocol.txt
+
+    $ influx_remix -o "MyOrg" -b "lilbucket" -h "http://localhost:9999" -t "secrettoken" mylineprotocol.txt
+
+
+# Defaults
+The default host is http://localhost:9999
+If you're using InfluxDB Cloud 2.0, simply add the host flag with the url to your instance.
+
+The default token is $INFLUX_TOKEN, but you can specify the token with the token flag.
+
+# Flags
+
+--host, -h: host url of your InfluxDB 2.0 instance
+--org, -o: name of your InfluxDB organization
+--bucket, -b: name of the InfluxDB bucket to write to
+--token, -t: your InfluxDB 2.0 token
+
+You can always use the help flag to see the available options.
+    $ influx_remix --help
 
 ## Development
 
@@ -32,7 +62,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/influx_remix.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/remix.
 
 ## License
 
