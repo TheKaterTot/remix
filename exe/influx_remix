@@ -2,16 +2,21 @@ require 'influx_remix'
 require 'slop'
 
 #!/usr/bin/env ruby
-opts = Slop.parse do |o|
-    o.string '-h', '--host', 'a hostname', default: 'http://localhost:9999'
-    o.string '-o', '--org', 'an organization'
-    o.string '-b', '--bucket', 'a bucket'
-    o.string '-t', '--token', 'a token', default: ENV["INFLUX_TOKEN"]
+begin
+    opts = Slop.parse do |o|
+        o.string '-h', '--host', 'a hostname', default: 'http://localhost:9999'
+        o.string '-o', '--org', 'an organization', required: true
+        o.string '-b', '--bucket', 'a bucket', required: true
+        o.string '-t', '--token', 'a token', default: ENV["INFLUX_TOKEN"]
 
-    o.on '--help' do
-        puts o
-        exit
-      end
+        o.on '--help' do
+            puts o
+            exit
+        end
+    end
+rescue Slop::Error => ex
+    puts ex
+    exit
 end
 
 load = InfluxRemix::Loader.new(ARGV.last)
