@@ -45,11 +45,15 @@ The default token is $INFLUX_TOKEN, but you can specify the token with the token
 # Flags
 
 --host, -h: host url of your InfluxDB 2.0 instance
+
 --org, -o: name of your InfluxDB organization
+
 --bucket, -b: name of the InfluxDB bucket to write to
+
 --token, -t: your InfluxDB 2.0 token
 
 You can always use the help flag to see the available options.
+
     $ influx_remix --help
 
 ## Development
