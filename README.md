@@ -1,8 +1,6 @@
 # InfluxRemix
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/influx_remix`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+![Image of DJ Giraffe](https://user-images.githubusercontent.com/1721599/69569749-2420b380-0f73-11ea-95cb-cf524a3032a8.PNG)
 
 ## Installation
 
