@@ -15,4 +15,4 @@ jobs:
       - ruby/bundle-install
       - run:
           name: Running tests
-          command: rake spec
+          command: rake
